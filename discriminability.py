@@ -88,7 +88,10 @@ def matrix_and_vector_from_graphs(ndmg_participant_dir, atlas, return_files=Fals
             )  # TODO: implement this as a list, then convert to numpy after. I think that's more efficient.
     if return_files:
         np.savetxt(
-            "{}_X.csv".format(ndmg_participant_dir), out_matrix, fmt="%f", delimiter=","
+            "{}_X.csv".format(ndmg_participant_dir),
+            out_matrix[1:, :],
+            fmt="%f",
+            delimiter=",",
         )  # save X
         for i in out_target_vector:  # save y
             with open("{}_y.csv".format(ndmg_participant_dir), "a") as f:
@@ -109,10 +112,10 @@ def csv_to_ssv(csv_file):
             line.replace(",", " ")
 
 
-csv_to_ssv("test_data.ssv")
-with open("test_data.ssv", "r") as f:
-    for line in f:
-        print(line)
+# csv_to_ssv("test_data.ssv")
+# with open("test_data.ssv", "r") as f4:
+#     for line in f:
+#         print(line)
 
 
 #%%
