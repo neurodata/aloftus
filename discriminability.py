@@ -4,11 +4,11 @@ Currently in the root directory for safekeeping, will be moved to a better home 
 """
 
 #%%
-import os, sys, re
+import os, sys, re, shutil
 import numpy as np, networkx as nx
 
 #%%
-def get_graph_files(ndmg_participant_dir, atlas):
+def get_graph_files(ndmg_participant_dir, atlas="desikan"):
     """
     ndmg_participant_dir  : ndmg participant-level analysis output directory.
     atlas  : which atlas should you get the graph for?
@@ -26,6 +26,7 @@ def get_graph_files(ndmg_participant_dir, atlas):
                 filename.endswith("_adj.csv")
                 or filename.endswith("_elist.ssv")
                 or filename.endswith("desikan.ssv")
+                or filename.endswith("_adj.ssv")
             )
             and atlas in filename
         )  # Soft check on filenames. Will break if filename has 'atlas' and '_adj.csv' in it but is not the adjacency matrix for that atlas.
@@ -34,7 +35,7 @@ def get_graph_files(ndmg_participant_dir, atlas):
 
 
 #%%
-def numpy_from_output_graph(input_csv_file, sep=","):
+def numpy_from_output_graph(input_csv_file, sep=" "):
     """ 
     Input: location of the .csv file for a single ndmg graph output
     Returns: Vectorized numpy matrix from that .csv file
@@ -51,6 +52,8 @@ def numpy_from_output_graph(input_csv_file, sep=","):
 #%%
 def matrix_and_vector_from_graphs(ndmg_participant_dir, atlas, return_files=False):
     # TODO: Figure out if there's a more computationally efficient way than building from a loop, that still absolutely guarentees that the target vector and corresponding matrix row are from the same subject
+    # TODO: change the way I define out_matrix, currently I instantiate an empty matrix first then build on top of it
+    # TODO: make out_matrix be dynamic to atlas
     """ 
     The main worker function. Big loop. Each loop iteration adds a row to out_matrix, and adds the subject name to out_target_vector.
     
@@ -100,10 +103,21 @@ def matrix_and_vector_from_graphs(ndmg_participant_dir, atlas, return_files=Fals
         return (out_matrix[1:, :], out_target_vector)
 
 
-data = "test_data"
-matrix_and_vector_from_graphs(data, "desikan")
+#%%
+def clear_dir_of_bad_files(ndmg_participant_dir):
+    # TODO: generalize to non-desikan shape
+    # TODO: currently only works on ssv files
+    """ If csv files generate graphs smaller than 70x70, delete the file """
+    files = get_graph_files(ndmg_participant_dir)  # list of paths
+    for i, file in enumerate(files):
+        if numpy_from_output_graph(files[i], sep=" ").shape != (70, 70):
+            os.remove(file)  # delete files that aren't 70x70
+
+
 #%%
 def csv_to_ssv(csv_file):
+    # TODO: finish this function
+    """ if csv file, make it be an ssv file """
     name, ext = os.path.splitext(csv_file)
     os.rename(csv_file, name + ".ssv")
 
@@ -112,10 +126,14 @@ def csv_to_ssv(csv_file):
             line.replace(",", " ")
 
 
-# csv_to_ssv("test_data.ssv")
-# with open("test_data.ssv", "r") as f4:
-#     for line in f:
-#         print(line)
+#%%
+def discrim(X, y, from_csv=False):
+    """ 
+    Calculate discriminability from an X matrix and a y vector. 
+    X  : np.array or csv filepath. n*d, n = num scans, d = 
+    y  : list or csv filepath. n*1, n = num scans
+    """
+    pass
 
 
 #%%
@@ -128,3 +146,6 @@ def main(data):
 # Call program with a file
 if __name__ == "__main__":
     main(sys.argv[1])
+
+
+#%%
