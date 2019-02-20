@@ -10,8 +10,13 @@ import numpy as np, networkx as nx
 #%%
 def get_graph_files(ndmg_participant_dir, atlas="desikan"):
     """
-    ndmg_participant_dir  : ndmg participant-level analysis output directory.
-    atlas  : which atlas should you get the graph for?
+    Get file locations for all graph files.
+
+    ------------
+    Parameters:
+        ndmg_participant_dir  : list of str. List of str. All output locations where grpahs exist.
+        atlas  : str. Which atlas should you get the graph for?
+
     Returns: list of folder locations for all graph outputs
     """
     d = os.path.abspath(ndmg_participant_dir)  # to make things easier
@@ -35,14 +40,20 @@ def get_graph_files(ndmg_participant_dir, atlas="desikan"):
 
 
 #%%
-def numpy_from_output_graph(input_csv_file, sep=" "):
-    """ 
-    Input: location of the .csv file for a single ndmg graph output
-    Returns: Vectorized numpy matrix from that .csv file
+def numpy_from_output_graph(input_file, sep=" "):
+    """
+    Generate a numpy array from an edgelist file location. 
+    
+    ------------
+    Parameters:
+        Input_file  : location of the .csv or .ssv file for a single ndmg graph output
+        sep  : sep in input file. ',' for csv, ' ' for ssv.
+
+    Returns  : Vectorized numpy matrix from that .csv file
     """
     # convert input from csv file to numpy matrix, then return
     out = nx.read_weighted_edgelist(
-        input_csv_file, delimiter=sep
+        input_file, delimiter=sep
     )  # TODO: make sure this outputs the same thing regardless of delimiter
     out = nx.to_numpy_matrix(out)
     np.fill_diagonal(out, 0)  # for staging branch
@@ -55,13 +66,17 @@ def matrix_and_vector_from_graphs(ndmg_participant_dir, atlas, return_files=Fals
     # TODO: change the way I define out_matrix, currently I instantiate an empty matrix first then build on top of it
     # TODO: make out_matrix be dynamic to atlas
     """ 
-    The main worker function. Big loop. Each loop iteration adds a row to out_matrix, and adds the subject name to out_target_vector.
+    Generate X and y. 
+    X is an n*d matrix. n=#graphs, d=(70*70) for desikan.
+    y is a target vector. Each element of y gives the subject for the corresponding row in X.
+    
+    Each loop iteration adds a row to out_matrix, and adds the subject name to out_target_vector.
     
     --------------
     Parameters: 
-        ndmg_participant_dir: List of graph output locations
-        atlas: Atlas to output graphs for
-        csv: if True, output csv files for X and y. Else, return the tuple (matrix, target_vector).
+        ndmg_participant_dir  : List of str. All output locations where grpahs exist.
+        atlas  : str. Atlas to output graphs for
+        return_files: bool. If True, output csv files for X and y. Else, return the tuple (matrix, target_vector).
     
     Returns: the tuple (out_matrix, out_target_vector).
     """
@@ -107,7 +122,13 @@ def matrix_and_vector_from_graphs(ndmg_participant_dir, atlas, return_files=Fals
 def clear_dir_of_bad_files(ndmg_participant_dir):
     # TODO: generalize to non-desikan shape
     # TODO: currently only works on ssv files
-    """ If csv files generate graphs smaller than 70x70, delete the file """
+    """ 
+    Clear a directory of low-dimension graph files. If csv files generate graphs smaller than 70x70, delete the file.
+
+    Parameters:
+    ----------
+        ndmg_participant_dir  : str. The directory to clean.
+    """
     files = get_graph_files(ndmg_participant_dir)  # list of paths
     for i, file in enumerate(files):
         if numpy_from_output_graph(files[i], sep=" ").shape != (70, 70):
@@ -117,7 +138,14 @@ def clear_dir_of_bad_files(ndmg_participant_dir):
 #%%
 def csv_to_ssv(csv_file):
     # TODO: finish this function
-    """ if csv file, make it be an ssv file """
+    # TODO: CURRENTLY BROKEN!
+    """ 
+    Convert csv files to ssv files.
+    
+    Parameters:
+    -----------
+        csv_file  : str. Location of csv file.
+    """
     name, ext = os.path.splitext(csv_file)
     os.rename(csv_file, name + ".ssv")
 
