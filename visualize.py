@@ -8,7 +8,18 @@ import discriminability
 
 #%%
 def nearest_square(num):
-    """ Return the smallest square number greater than `num`. """
+    """ 
+    Return the smallest square number greater than `num`.
+    For use in visualize_biggraph(), to make the correct number of axes.
+    
+    Parameters:
+    -----------
+        num: int
+
+    Returns: 
+    --------
+        int. Square number.
+    """
     return (
         ceil(sqrt(num)) ** 2
     )  # derek -- this is what I was talking about over the phone. See its implementation in visualize_biggraph().
@@ -19,9 +30,14 @@ def visualize_graph(graph_inp, log10=True, save=False, name=""):
     Given an input .ssv file, output a graph.
 
     Parameters:
-    graph_inp  : str, .ssv or .csv edgelist.
-    log10  : bool, whether to output a log-scale graph
-    show  : bool, toggle for returning a plot or calling plt.show().
+    -----------
+        graph_inp  : str. .ssv or .csv edgelist.
+        log10  : bool. whether to output a log-scale graph
+        save  : bool. If True, save plot as file.
+
+    Returns:
+    --------
+        plot.
     """
     graph_inp = os.path.abspath(graph_inp)
     nx_graph = nx.read_weighted_edgelist(graph_inp)
@@ -45,8 +61,10 @@ def visualize_biggraph(ndmg_participant_dir, save=False, outname=""):
     Given an input directory, output a summary png file.
 
     Parameters:
-    ndmg_participant_dir  : directory containing output files.
-    outname  : name of output .png file
+    -----------
+        ndmg_participant_dir  : str. Directory containing output files.
+        save  : bool. If True, save the figure as a file.
+        outname  : str. Name of output .png file
     """
     subls = discriminability.get_graph_files(ndmg_participant_dir)
     rgx = re.compile(r"(sub-)([a-zA-Z0-9]*(_ses-)([a-zA-Z0-9]*))")
@@ -72,11 +90,6 @@ def visualize_biggraph(ndmg_participant_dir, save=False, outname=""):
     else:
         plt.show()
 
-
-#%%
-visualize_biggraph(
-    "dev-02-18-removed", save=True, outname="dev-02-18-badgraphs-removed"
-)
 
 #%%
 if __name__ == "__main__":
