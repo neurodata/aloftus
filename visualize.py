@@ -37,7 +37,7 @@ def visualize_graph(graph_inp, log10=True, save=False, name=""):
 
     Returns:
     --------
-        plot.
+        plot if not save.
     """
     graph_inp = os.path.abspath(graph_inp)
     nx_graph = nx.read_weighted_edgelist(graph_inp)

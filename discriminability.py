@@ -157,9 +157,16 @@ def csv_to_ssv(csv_file):
 #%%
 def discrim(X, y, from_csv=False):
     """ 
-    Calculate discriminability from an X matrix and a y vector. 
-    X  : np.array or csv filepath. n*d, n = num scans, d = 
-    y  : list or csv filepath. n*1, n = num scans
+    Calculate discriminability from an X matrix and a y vector.
+
+    Parameters:
+    -----------
+        X  : np.array or csv filepath. n*d, n = num scans, d = 70*70 for desikan.
+        y  : list or csv filepath. Length n, n = num scans
+        from_csv  : if True, X and y are csv filepaths.
+
+    Returns:
+        int. Number between 0 and 1.
     """
     pass
 
