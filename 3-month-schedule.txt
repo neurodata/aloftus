@@ -1,0 +1,67 @@
+June, July, August
+
+05/27
+
+06/3 : OHBM
+deliverable : OHBM thing?
+
+06/10 : OHBM
+deliverable : OHBM thing?
+
+06/17 : OHBM
+deliverable : OHBM thing?
+
+06/24
+deliverable : 
+
+07/01
+deliverable : 
+
+07/08
+deliverable : 
+
+07/15
+deliverable : 
+
+07/22
+deliverable : 
+
+07/29
+deliverable : 
+
+08/05
+deliverable : 
+
+08/12
+deliverable : 
+
+08/19
+deliverable : 
+
+08/26
+deliverable : 
+
+
+
+Comments
+--------
+- I want to write code more
+- I want to be writing code more
+- I repeat: I want to be writing code more often than I spent the first portion of my time here writing code
+- I do not want to do things that do not involve writing code
+- tests
+- make working with outputs easier
+- data needs to get run so other people can use
+- 
+
+GENERAL THINGS : to be specified into deliverables
+-------------
+- OHBM gonna be a thing, figure out what I want to get out of it
+- travis : test on inputs / outputs
+- derek's test
+- AWS grant
+- AWS batch : 5 datasets
+- QA : ^5 datasets
+- AWS batch : 20 datasets
+- website updated
+- my code for working with ndmg outputs
