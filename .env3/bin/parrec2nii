@@ -1,0 +1,9 @@
+#!/Users/alex/Dropbox/NeuroData/ndmg-top/exploration/aloftus/.env3/bin/python3.7
+"""PAR/REC to NIfTI converter
+"""
+
+from nibabel.cmdline.parrec2nii import main
+
+
+if __name__ == '__main__':
+    main()

@@ -29,6 +29,7 @@ def get_graph_files(ndmg_participant_dir, atlas="desikan"):
         if (
             (
                 filename.endswith("_adj.csv")
+                or filename.endswith("_elist.csv")
                 or filename.endswith("_elist.ssv")
                 or filename.endswith("desikan.ssv")
                 or filename.endswith("_adj.ssv")

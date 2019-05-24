@@ -25,7 +25,7 @@ def nearest_square(num):
     )  # derek -- this is what I was talking about over the phone. See its implementation in visualize_biggraph().
 
 
-def visualize_graph(graph_inp, log10=True, save=False, name=""):
+def visualize_graph(graph_inp, log10=True, save=False, filetype="ssv", name=""):
     """
     Given an input .ssv file, output a graph.
 
@@ -40,7 +40,10 @@ def visualize_graph(graph_inp, log10=True, save=False, name=""):
         plot if not save.
     """
     graph_inp = os.path.abspath(graph_inp)
-    nx_graph = nx.read_weighted_edgelist(graph_inp)
+    if filetype == "csv":
+        nx_graph = nx.read_weighted_edgelist(graph_inp, delimiter=",")
+    else:
+        nx_graph = nx.read_weighted_edgelist(graph_inp)
     mat = nx.to_numpy_matrix(nx_graph)
     if log10:
         plot = plt.imshow(np.log10(mat + 1), cmap="plasma")
