@@ -22,9 +22,12 @@ reasoning :
     - this will eventually get merged into `ndmg` or be converted into a QSIPrep utility package or put into graspy, but for now it's most useful as a standalone package
 
 06/3 : OHBM hackashop
-deliverable : Whatever we make at the hackashop  # TODO
+deliverable : ndmg docker image verified working, push standalone release
 details : 
+    - make sure atlases are pulled properly from neuroparc
+    - talk to Derek about any other potential issues
 reasoning : 
+    - OHBM hackashop seems like a good time to make absolutely sure we have a working docker image for AWS batch later
 
 06/10 : OHBM
 deliverable : notes summary of OHBM
@@ -36,11 +39,15 @@ reasoning :
 
 
 06/17 : OHBM / vacation
+deliverable, last 3 days : aws grant
 deliverable : Pictures of the summit of Mt. Pilatus :)
 details : 
     - we are climbing a mountain
+    - it will be beautiful
+    - I am also working 2 days this week, during which I will write the AWS grant
 reasoning : 
     - the view at the top will be awesome
+    - amount of work gives just enough time to squeeze in grant
 
 06/24
 deliverable : github test autorun on ndmg PR
@@ -55,27 +62,30 @@ reasoning :
     - I also want to get familiar with Travis, and this is a good way to do so
 
 07/01
-deliverable : 
+deliverable : AWS batch run on 1 subject
 details : 
+    - Make sure verified-working docker image from OHBM works
+    - Set up ndmg-data s3 bucket with proper permissions, put that image on to AWS-batch
 reasoning : 
+    - once this is set up seamlessly, running on any dataset should be trivial
 
 07/08
-deliverable : 
+deliverable : 5 datasets, fully run on AWS batch
 details : 
 reasoning : 
 
 07/15
-deliverable : 
+deliverable : jupyter notebook analysis of 5 datasets
 details : 
 reasoning : 
 
 07/22
-deliverable : 
+deliverable : all datasets fully run on AWS batch
 details : 
 reasoning : 
 
 07/29
-deliverable : 
+deliverable : website updated with all datasets
 details : 
 reasoning : 
 
@@ -89,7 +99,7 @@ deliverable :
 details : 
 reasoning : 
 
-08/19
+08/19 : NeuroData Hackashop
 deliverable : 
 details : 
 reasoning : 
@@ -107,6 +117,9 @@ Vague brainstorming
 - derek / me tests
 - make working with outputs easier
 - data needs to get run so other people can use
+- goal : get us to the point where the focus is on doing data science / data analysis, 
+         not on fixing random bugs
+
 
 GENERAL THINGS : to be specified into deliverables
 -------------
@@ -114,7 +127,14 @@ GENERAL THINGS : to be specified into deliverables
 - test on inputs / outputs
     - pytest fixture to create data directory
     - paramaterized fixtures to test different inputs
-- derek's test
+- derek wants test to make sure hemispheres are correct
+    - create a hole in base image
+    - right hemisphere or left hemisphere - image_R, image_L
+    - run through ndmg
+    - goal : test whether or not we get tractography with correct orientation
+    - Streamlines should have hole on the same end
+    - figure out how to make a hole in an image and save it on each side of the brain
+- test of ndmg_dwi_worker
 - AWS grant
 - AWS batch : 5 datasets
 - QA : ^5 datasets
