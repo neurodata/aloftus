@@ -16,7 +16,7 @@ details :
     - 3-month schedule : should be "complete", e.g., all weeks are filled out with concrete deliverables.
       Should be updated / refined over time.
 
-reasoning :
+reasoning / comments :
     - I want a tool I know works, that I can build on, which will prevent me from spending a week concatenating graphs
     - gives me more experience working with pytest, so that I can plan better - specifically, I need to know how to run tests on sample data, and cache results for the next test
     - this will eventually get merged into `ndmg` or be converted into a QSIPrep utility package or put into graspy, but for now it's most useful as a standalone package
@@ -26,7 +26,7 @@ deliverable : ndmg docker image verified working, push standalone release
 details : 
     - make sure atlases are pulled properly from neuroparc
     - talk to Derek about any other potential issues
-reasoning : 
+reasoning / comments : 
     - OHBM hackashop seems like a good time to make absolutely sure we have a working docker image for AWS batch later
 
 06/10 : OHBM
@@ -34,7 +34,7 @@ deliverable : notes summary of OHBM
 details : 
     - notebook during the conference to keep track of stuff potentially useful for us
     - Summarize in document at the end
-reasoning : 
+reasoning / comments : 
     - Open to other suggestions here
 
 
@@ -45,7 +45,7 @@ details :
     - we are climbing a mountain
     - it will be beautiful
     - I am also working 2 days this week, during which I will write the AWS grant
-reasoning : 
+reasoning / comments : 
     - the view at the top will be awesome
     - amount of work gives just enough time to squeeze in grant
 
@@ -56,7 +56,7 @@ details :
     - Test for a nonzero amount of edgelist outputs
     - Make sure there are a nonzero amount of (node, node, weight) 3-tuples in each edgelist
     - potentially use https://pypi.org/project/pytest-cache/
-reasoning : 
+reasoning / comments : 
     - Currently, every time we make a PR, we have to manually test to make sure the PR didn't break the pipeline. A simple check like this would dramatically speed up workflow in the future
     - This is up for debate, depending on whether QSIPrep already does this and whether it would be useful
     - I also want to get familiar with Travis, and this is a good way to do so
@@ -64,50 +64,54 @@ reasoning :
 07/01
 deliverable : AWS batch run on 1 subject
 details : 
-    - Make sure verified-working docker image from OHBM works
+    - Run docker image from OHBM (or new one) locally first
     - Set up ndmg-data s3 bucket with proper permissions, put that image on to AWS-batch
-reasoning : 
+reasoning / comments : 
     - once this is set up seamlessly, running on any dataset should be trivial
 
 07/08
 deliverable : 5 datasets, fully run on AWS batch
 details : 
-reasoning : 
+reasoning / comments : 
 
 07/15
 deliverable : jupyter notebook analysis of 5 datasets
 details : 
-reasoning : 
+- TODO : make this section more concrete
+- use `graphutils` and `graspy` for this
+- update `graphutils` as necessary, potentially make PR to graspy
+reasoning / comments : 
 
 07/22
 deliverable : all datasets fully run on AWS batch
 details : 
-reasoning : 
+reasoning / comments : 
 
 07/29
 deliverable : website updated with all datasets
 details : 
-reasoning : 
+reasoning / comments : 
 
 08/05
-deliverable : 
+deliverable : jupyter notebook analysis of all datasets
 details : 
-reasoning : 
+reasoning / comments : 
+- need to talk to jovo about what would be good here
 
 08/12
-deliverable : 
+deliverable : schedule for ndmg day of hackashop
 details : 
-reasoning : 
+reasoning / comments : 
 
 08/19 : NeuroData Hackashop
 deliverable : 
 details : 
-reasoning : 
+reasoning / comments : 
 
 08/26
-deliverable : 
+deliverable : more analysis?
 details : 
-reasoning : 
+reasoning / comments : 
 
 
 
@@ -119,6 +123,8 @@ Vague brainstorming
 - data needs to get run so other people can use
 - goal : get us to the point where the focus is on doing data science / data analysis, 
          not on fixing random bugs
+- is it possible to get Drishti involved somehow?
+- Ben gonna try to run ndmg
 
 
 GENERAL THINGS : to be specified into deliverables
