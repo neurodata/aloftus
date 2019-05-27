@@ -101,13 +101,12 @@ reasoning :
 
 
 
-Comments
+Vague brainstorming
 --------
 -  Be writing code more often than I spent the first portion of my time here writing code
 - derek / me tests
 - make working with outputs easier
 - data needs to get run so other people can use
-- 
 
 GENERAL THINGS : to be specified into deliverables
 -------------
