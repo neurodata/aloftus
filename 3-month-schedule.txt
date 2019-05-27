@@ -1,55 +1,110 @@
 June, July, August
 
-05/27
+this is intended to be a living document,
+fully subject to change and refinement.
 
-06/3 : OHBM
-deliverable : OHBM thing?
+05/27
+deliverable : finished tests + numpy-formatted docstrings on graphutils.NdmgDirectory
+deliverable : 3-month schedule
+details : 
+    - set up to build class from mock data directory with pytest
+    - test to make sure order of NdmgDirectory.files matches order of .graphs, .X, .Y,
+    - test on _pass_to_ranks  # TODO : specify how to test this. Talk to pedigo / j1
+    - test on file saving method
+        - output csv files to dummy folder
+        - make sure I can recreate both X and Y, in proper order, from output csv files
+    - 3-month schedule : should be "complete", e.g., all weeks are filled out with concrete deliverables.
+      Should be updated / refined over time.
+
+reasoning :
+    - I want a tool I know works, that I can build on, which will prevent me from spending a week concatenating graphs
+    - gives me more experience working with pytest, so that I can plan better - specifically, I need to know how to run tests on sample data, and cache results for the next test
+    - this will eventually get merged into `ndmg` or be converted into a QSIPrep utility package or put into graspy, but for now it's most useful as a standalone package
+
+06/3 : OHBM hackashop
+deliverable : Whatever we make at the hackashop  # TODO
+details : 
+reasoning : 
 
 06/10 : OHBM
-deliverable : OHBM thing?
+deliverable : notes summary of OHBM
+details : 
+    - notebook during the conference to keep track of stuff potentially useful for us
+    - Summarize in document at the end
+reasoning : 
+    - Open to other suggestions here
 
-06/17 : OHBM
-deliverable : OHBM thing?
+
+06/17 : OHBM / vacation
+deliverable : Pictures of the summit of Mt. Pilatus :)
+details : 
+    - we are climbing a mountain
+reasoning : 
+    - the view at the top will be awesome
 
 06/24
-deliverable : 
+deliverable : github test autorun on ndmg PR
+details : 
+    - Downsampled test data, 2 subjects, 2 sessions, from HNU1
+    - Test for a nonzero amount of edgelist outputs
+    - Make sure there are a nonzero amount of (node, node, weight) 3-tuples in each edgelist
+    - potentially use https://pypi.org/project/pytest-cache/
+reasoning : 
+    - Currently, every time we make a PR, we have to manually test to make sure the PR didn't break the pipeline. A simple check like this would dramatically speed up workflow in the future
+    - This is up for debate, depending on whether QSIPrep already does this and whether it would be useful
+    - I also want to get familiar with Travis, and this is a good way to do so
 
 07/01
 deliverable : 
+details : 
+reasoning : 
 
 07/08
 deliverable : 
+details : 
+reasoning : 
 
 07/15
 deliverable : 
+details : 
+reasoning : 
 
 07/22
 deliverable : 
+details : 
+reasoning : 
 
 07/29
 deliverable : 
+details : 
+reasoning : 
 
 08/05
 deliverable : 
+details : 
+reasoning : 
 
 08/12
 deliverable : 
+details : 
+reasoning : 
 
 08/19
 deliverable : 
+details : 
+reasoning : 
 
 08/26
 deliverable : 
+details : 
+reasoning : 
 
 
 
 Comments
 --------
-- I want to write code more
-- I want to be writing code more
-- I repeat: I want to be writing code more often than I spent the first portion of my time here writing code
-- I do not want to do things that do not involve writing code
-- tests
+-  Be writing code more often than I spent the first portion of my time here writing code
+- derek / me tests
 - make working with outputs easier
 - data needs to get run so other people can use
 - 
@@ -57,7 +112,9 @@ Comments
 GENERAL THINGS : to be specified into deliverables
 -------------
 - OHBM gonna be a thing, figure out what I want to get out of it
-- travis : test on inputs / outputs
+- test on inputs / outputs
+    - pytest fixture to create data directory
+    - paramaterized fixtures to test different inputs
 - derek's test
 - AWS grant
 - AWS batch : 5 datasets
