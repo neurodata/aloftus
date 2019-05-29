@@ -3,9 +3,10 @@ June, July, August
 this is intended to be a living document,
 fully subject to change and refinement.
 
+
 05/27
-deliverable : finished tests + numpy-formatted docstrings on graphutils.NdmgDirectory
-deliverable : 3-month schedule
+DELIVERABLE : finished tests + numpy-formatted docstrings on graphutils.NdmgDirectory
+DELIVERABLE : 3-month schedule
 details : 
     - set up to build class from mock data directory with pytest
     - test to make sure order of NdmgDirectory.files matches order of .graphs, .X, .Y,
@@ -13,7 +14,7 @@ details :
     - test on file saving method
         - output csv files to dummy folder
         - make sure I can recreate both X and Y, in proper order, from output csv files
-    - 3-month schedule : should be "complete", e.g., all weeks are filled out with concrete deliverables.
+    - 3-month schedule : should be "complete", e.g., all weeks are filled out with concrete DELIVERABLEs.
 
 reasoning / comments :
     - I want a tool I know works, that I can build on, which will prevent me from spending a week concatenating graphs
@@ -21,8 +22,8 @@ reasoning / comments :
     - this will eventually get merged into `ndmg` or be converted into a QSIPrep utility package or put into graspy, but for now it's most useful as a standalone package
     
 06/3 : OHBM hackashop
-deliverable : derek's test
-deliverable : ndmg docker image verified working, push standalone release
+DELIVERABLE : derek's test
+DELIVERABLE : ndmg docker image verified working, push standalone release
 details : 
     - make sure atlases are pulled properly from neuroparc
     derek test:
@@ -36,18 +37,17 @@ reasoning / comments :
     - OHBM hackashop also seems like a good time to write the test derek wanted
 
 06/10 : OHBM
-deliverable : notes summary of OHBM
+DELIVERABLE : notes summary of OHBM
 details : 
     - notebook during the conference to keep track of stuff potentially useful for us
     - Summarize in document at the end
 reasoning / comments : 
     - Open to other suggestions here
 
-
 06/17 : OHBM / vacation
-deliverable, last 3 days : aws grant
-deliverable, last 3 days : ndmg issues page cleaned up
-deliverable : Pictures of the summit of Mt. Pilatus :)
+DELIVERABLE, last 3 days : aws grant
+DELIVERABLE, last 3 days : ndmg issues page cleaned up
+DELIVERABLE : Pictures of the summit of Mt. Pilatus :)
 details : 
     - we are climbing a mountain
     - it will be beautiful
@@ -56,7 +56,7 @@ reasoning / comments :
     - amount of time gives just enough time to squeeze in grant
 
 06/24
-deliverable : github test run on ndmg PR
+DELIVERABLE : github test run on ndmg PR
 details : 
     - Downsampled test data, 2 subjects, 2 sessions, from HNU1
     - Test for a nonzero amount of edgelist outputs
@@ -68,7 +68,7 @@ reasoning / comments :
     - I also want to get familiar with Travis, and this is a good way to do so
 
 07/01
-deliverable : AWS batch run on 1 subject
+DELIVERABLE : AWS batch run on 1 subject
 details : 
     - Run docker image from OHBM (or new one) locally first
     - Set up ndmg-data s3 bucket with proper permissions, put that image on to AWS-batch
@@ -76,7 +76,7 @@ reasoning / comments :
     - once this is set up seamlessly, running on any dataset should be trivial
 
 07/08
-deliverable : 5 datasets, run on AWS batch
+DELIVERABLE : 5 datasets, run on AWS batch
 details : 
     - HNU1, BNU3, SWU4, KKI, NKI
     - native space and mni
@@ -84,7 +84,7 @@ reasoning / comments :
     - somewhat self-explanatory
 
 07/15
-deliverable : jupyter notebook EDA of 5 datasets
+DELIVERABLE : jupyter notebook EDA of 5 datasets
 details : 
     - obvious thing: check norm of native graphs to make sure they're the same as derek's stampede outputs
     - use `graphutils` and `graspy` for this
@@ -92,45 +92,46 @@ details :
 reasoning / comments : 
     - jovo? don't know what would be best here  # TODO
     
-
 07/22
-deliverable : update `graphutils` with useful functions, or PR to graspy
-details : 
-    - likely will have ideas for useful functionality to add after 07/15
-reasoning / comments : 
-    - Mainly adding this because I'll have spent 07/01 and 07/08 not coding, and I'll likely have ideas for stuff I want to implement
-
-07/29
-deliverable : website updated with all datasets
+DELIVERABLE : website updated with all datasets
 details : 
     - Website will have needed to be updated for a long time at this point
     - Ideally : "download" button on website to let people directly download CSV edgelists
 reasoning / comments : 
     - this has been needed to be added for a long time
-    - stuff after this point will intentionally get a bit vague, since we're getting pretty far into the future
+    - deliverables after this point will intentionally get a bit vague, since we're getting pretty far into the future
 
+07/29
+DELIVERABLE : update `graphutils` with useful functions, or PR to graspy
+details : 
+    - likely will have ideas for useful functionality to add after 07/15
+reasoning / comments : 
+    - Mainly adding this because I'll have spent 07/01 and 07/08 and 07/22 not coding much, and I'll likely have ideas for stuff I want to implement + want to code more
+    
 08/05
-deliverable : jupyter notebook analysis of all datasets, or finally do work on psychopathy data stuff?
+DELIVERABLE : jupyter notebook analysis of all datasets, or finally do work on psychopathy data stuff?
 details : 
 reasoning / comments : 
     - need to talk to jovo about what would be good here
 
 08/12
-deliverable : schedule for ndmg day of hackashop
+DELIVERABLE : schedule for ndmg day of hackashop
+DELIVERABLE : presentation for ndmg day of hackashop
 details : 
 reasoning / comments : 
     - need to plan this out with Derek
     - talk about this with him in Rome
 
 08/19 : NeuroData Hackashop
-deliverable : 
+DELIVERABLE : mgc/rerf/graspy/ardent notebooks
 details : 
 reasoning / comments : 
+    - use this week to learn a fuckload about our other tools
     - have a really solid plan for the hackashop with Derek by the week prior
     - hackashop should be fun (e.g., I want to learn how to use mgc + rerf + graspy better)
 
 08/26
-deliverable : more analysis notebooks? using mgc/rerf/graspy
+DELIVERABLE : more analysis notebooks? using mgc/rerf/graspy
 details : 
 reasoning / comments : 
     - Hard to plan out by this point, because the space of possibilities for where we'll be at is so large
@@ -138,20 +139,18 @@ reasoning / comments :
     - should be using graspy / mgc / rerf a lot at this point on dmri outputs to get a feel for them, especially since I'll have learned some stuff about our other tools from the hackashop
 
 
-
 Vague brainstorming
 --------
 -  Be writing code more often than I spent the first portion of my time here writing code
 - derek / me tests
-- make working with outputs easier
-- data needs to get run so other people can use
 - goal : get us to the point where the focus is on doing data science / data analysis, 
          not on fixing random bugs
 - is it possible to get Drishti involved somehow?
 - Ben gonna try to run ndmg
+- general flow : make running stuff maintainable --> make running stuff easy and do a lot of it ---> do a bunch of analysis
 
 
-GENERAL THINGS : to be specified into deliverables
+GENERAL THINGS : to be specified into DELIVERABLEs
 -------------
 - OHBM gonna be a thing, figure out what I want to get out of it
 - test on inputs / outputs
