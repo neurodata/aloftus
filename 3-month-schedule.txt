@@ -32,6 +32,7 @@ details :
         - right hemisphere or left hemisphere - image_R, image_L
         - run through ndmg
         - Streamlines should have hole on the same end
+        - TODO : figure out which base image files need to get changed
 reasoning / comments : 
     - OHBM hackashop seems like a good time to make absolutely sure we have a working docker image for AWS batch later
     - OHBM hackashop also seems like a good time to write the test derek wanted
@@ -112,7 +113,7 @@ reasoning / comments :
 DELIVERABLE : jupyter notebook analysis of all datasets, or finally do work on psychopathy data stuff?
 details : 
 reasoning / comments : 
-    - need to talk to jovo about what would be good here
+    - need to talk to jovo about what would be good here  # TODO
 
 08/12
 DELIVERABLE : schedule for ndmg day of hackashop
