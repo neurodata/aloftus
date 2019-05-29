@@ -14,20 +14,26 @@ details :
         - output csv files to dummy folder
         - make sure I can recreate both X and Y, in proper order, from output csv files
     - 3-month schedule : should be "complete", e.g., all weeks are filled out with concrete deliverables.
-      Should be updated / refined over time.
 
 reasoning / comments :
     - I want a tool I know works, that I can build on, which will prevent me from spending a week concatenating graphs
     - gives me more experience working with pytest, so that I can plan better - specifically, I need to know how to run tests on sample data, and cache results for the next test
     - this will eventually get merged into `ndmg` or be converted into a QSIPrep utility package or put into graspy, but for now it's most useful as a standalone package
-
+    
 06/3 : OHBM hackashop
+deliverable : derek's test
 deliverable : ndmg docker image verified working, push standalone release
 details : 
     - make sure atlases are pulled properly from neuroparc
-    - talk to Derek about any other potential issues
+    derek test:
+        - goal : test whether or not we get tractography with correct orientation
+        - create a hole in base image
+        - right hemisphere or left hemisphere - image_R, image_L
+        - run through ndmg
+        - Streamlines should have hole on the same end
 reasoning / comments : 
     - OHBM hackashop seems like a good time to make absolutely sure we have a working docker image for AWS batch later
+    - OHBM hackashop also seems like a good time to write the test derek wanted
 
 06/10 : OHBM
 deliverable : notes summary of OHBM
@@ -40,17 +46,17 @@ reasoning / comments :
 
 06/17 : OHBM / vacation
 deliverable, last 3 days : aws grant
+deliverable, last 3 days : ndmg issues page cleaned up
 deliverable : Pictures of the summit of Mt. Pilatus :)
 details : 
     - we are climbing a mountain
     - it will be beautiful
-    - I am also working 2 days this week, during which I will write the AWS grant
+    - I am also working 2 days this week, during which I will write the AWS grant and clean up the ndmg issues page, because it would be useful to start using it.
 reasoning / comments : 
-    - the view at the top will be awesome
-    - amount of work gives just enough time to squeeze in grant
+    - amount of time gives just enough time to squeeze in grant
 
 06/24
-deliverable : github test autorun on ndmg PR
+deliverable : github test run on ndmg PR
 details : 
     - Downsampled test data, 2 subjects, 2 sessions, from HNU1
     - Test for a nonzero amount of edgelist outputs
@@ -70,48 +76,66 @@ reasoning / comments :
     - once this is set up seamlessly, running on any dataset should be trivial
 
 07/08
-deliverable : 5 datasets, fully run on AWS batch
+deliverable : 5 datasets, run on AWS batch
 details : 
+    - HNU1, BNU3, SWU4, KKI, NKI
+    - native space and mni
 reasoning / comments : 
+    - somewhat self-explanatory
 
 07/15
-deliverable : jupyter notebook analysis of 5 datasets
+deliverable : jupyter notebook EDA of 5 datasets
 details : 
-- TODO : make this section more concrete
-- use `graphutils` and `graspy` for this
-- update `graphutils` as necessary, potentially make PR to graspy
+    - obvious thing: check norm of native graphs to make sure they're the same as derek's stampede outputs
+    - use `graphutils` and `graspy` for this
+    - update `graphutils` as necessary
 reasoning / comments : 
+    - jovo? don't know what would be best here  # TODO
+    
 
 07/22
-deliverable : all datasets fully run on AWS batch
+deliverable : update `graphutils` with useful functions, or PR to graspy
 details : 
+    - likely will have ideas for useful functionality to add after 07/15
 reasoning / comments : 
+    - Mainly adding this because I'll have spent 07/01 and 07/08 not coding, and I'll likely have ideas for stuff I want to implement
 
 07/29
 deliverable : website updated with all datasets
 details : 
+    - Website will have needed to be updated for a long time at this point
+    - Ideally : "download" button on website to let people directly download CSV edgelists
 reasoning / comments : 
+    - this has been needed to be added for a long time
+    - stuff after this point will intentionally get a bit vague, since we're getting pretty far into the future
 
 08/05
-deliverable : jupyter notebook analysis of all datasets
+deliverable : jupyter notebook analysis of all datasets, or finally do work on psychopathy data stuff?
 details : 
 reasoning / comments : 
-- need to talk to jovo about what would be good here
+    - need to talk to jovo about what would be good here
 
 08/12
 deliverable : schedule for ndmg day of hackashop
 details : 
 reasoning / comments : 
+    - need to plan this out with Derek
+    - talk about this with him in Rome
 
 08/19 : NeuroData Hackashop
 deliverable : 
 details : 
 reasoning / comments : 
+    - have a really solid plan for the hackashop with Derek by the week prior
+    - hackashop should be fun (e.g., I want to learn how to use mgc + rerf + graspy better)
 
 08/26
-deliverable : more analysis?
+deliverable : more analysis notebooks? using mgc/rerf/graspy
 details : 
 reasoning / comments : 
+    - Hard to plan out by this point, because the space of possibilities for where we'll be at is so large
+    - In general, I am a fan of being at a point where I'm regularly doing analysis / data science / statistics work, so the more analysis / exploration after ndmg/qsiprep/whatever is stable the better
+    - should be using graspy / mgc / rerf a lot at this point on dmri outputs to get a feel for them, especially since I'll have learned some stuff about our other tools from the hackashop
 
 
 
