@@ -1,4 +1,4 @@
-https://img.shields.io/pypi/dm/aloftus.svg
+[![Downloads shield](https://img.shields.io/aloftus/dm/graspy.svg)]
 
 should be before the old text
 
