@@ -1,1 +1,4 @@
-Repo for holding alex's jupyter notebooks, etc
+hi felicity
+should be before the old text
+
+I can still update readmes programatically
