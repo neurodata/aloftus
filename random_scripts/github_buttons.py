@@ -8,6 +8,8 @@ import requests
 from github import Github
 import pypilist
 
+from hidden import PASSWORD
+
 #%%
 FAILED = ["RerF", "render-python", "neuroglancer-scripts"]
 ON_PYPI = [
@@ -85,22 +87,19 @@ def get_shield(repo):
 # for repo in nd.get_repos():
 #     if repo.name in ON_PYPI:
 #         try:
-#             update_readme(repo, shield)
 #             shield = get_shield(repo)
+#             update_readme(repo, shield)
 #         except:
 #             print(f"repo {repo.name} failed.")
 #             continue
 
-# g = github("loftusa", "")
-# nd = g.get_organization("neurodata")
-# me = nd.get_repo("aloftus")
 
 # new = get_shield(me)
 # update_readme(me, new)
 
 #%%
 # # setup and constants
-g = Github("loftusa", "")
+g = Github("loftusa", PASSWORD)
 nd = g.get_organization("Neurodata")
 
 # make dict with info
