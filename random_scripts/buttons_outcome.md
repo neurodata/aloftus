@@ -1,21 +1,18 @@
 ## PyPi Downloads
 - PyPI downloads added for all packages on PyPi.
-- Total: 3168/mo
+- Total: 1635/mo
+    - ndmg: 373/mo
     - graspy: 334/mo 
+    - ndio: 181/mo
+    - ndex: 131/mo
+    - knor: 123/mo
     - mgcpy: 115/mo
     - rerf: 110/mo
-    - ndmg: 373/mo
-    - ndreg: 1000/mo
-    - lol: 35/mo
-    - ndio: 222/mo
-    - ndparse: 291/mo
-    - neuroglancer: 48/mo
-    - render-python: 294/mo
-    - intern: 222/mo
-    - neuroglancer-scripts: 53/mo
-    - knor: 123/mo
     - pymeda: 59/mo
-    - ndex: 131/mo
+    - neuroglancer-scripts: 53/mo
+    - ndparse: 52/mo
+    - ndreg: 45/mo
+    - lol: 35/mo
 
 
 ## Git Clones
