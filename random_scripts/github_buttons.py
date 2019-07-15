@@ -106,7 +106,7 @@ nd = g.get_organization("Neurodata")
 # make dict with info
 info = dict()
 for repo in nd.get_repos():
-    info[repo.name] = repo.get_views_traffic(per="week")
+    info[repo.name] = repo.get_clones_traffic(per="week")
 
 # over the past 14 days
 info = OrderedDict(info)
@@ -114,7 +114,7 @@ info = OrderedDict(info)
 #%%
 # get totals
 total_uniques = sum([val["uniques"] for val in info.values()])  # 270
-total_views = sum([val["count"] for val in info.values()])  # 599
+total_clones = sum([val["count"] for val in info.values()])  # 599
 
 # sort by total clones
 sorted_clones = sorted(info.items(), key=lambda item: item[1]["uniques"], reverse=True)
