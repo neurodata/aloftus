@@ -77,7 +77,7 @@ def get_shield(repo):
 
 #%%
 # code
-# g = Github("loftusa", "Yvhh8fmi!")
+# g = Github("loftusa", "")
 # nd = g.get_organization("neurodata")
 # me = nd.get_repo("aloftus")
 # old
@@ -91,7 +91,7 @@ def get_shield(repo):
 #             print(f"repo {repo.name} failed.")
 #             continue
 
-# g = github("loftusa", "yvhh8fmi!")
+# g = github("loftusa", "")
 # nd = g.get_organization("neurodata")
 # me = nd.get_repo("aloftus")
 
@@ -100,7 +100,7 @@ def get_shield(repo):
 
 #%%
 # # setup and constants
-g = Github("loftusa", "Yvhh8fmi!")
+g = Github("loftusa", "")
 nd = g.get_organization("Neurodata")
 
 # make dict with info
