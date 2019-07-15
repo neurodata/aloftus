@@ -4,7 +4,7 @@
     - graspy: 334/mo 
     - mgcpy: 115/mo
     - rerf: 110/mo
-    - ndmg: 131/mo
+    - ndmg: 373/mo
     - ndreg: 1000/mo
     - lol: 35/mo
     - ndio: 222/mo

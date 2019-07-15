@@ -77,9 +77,14 @@ def get_shield(repo):
     return ""
 
 
+g = Github("loftusa", PASSWORD)
+nd = g.get_organization("neurodata")
+me = nd.get_repo("aloftus")
+
+get_shield(me)
 #%%
 # code
-# g = Github("loftusa", "")
+# g = Github("loftusa", PASSWORD)
 # nd = g.get_organization("neurodata")
 # me = nd.get_repo("aloftus")
 # old
