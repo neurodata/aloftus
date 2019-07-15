@@ -75,12 +75,11 @@ def get_shield(repo):
     return ""
 
 
-# code
-g = Github("loftusa", "Yvhh8fmi!")
-nd = g.get_organization("neurodata")
-me = nd.get_repo("aloftus")
-
 #%%
+# code
+# g = Github("loftusa", "Yvhh8fmi!")
+# nd = g.get_organization("neurodata")
+# me = nd.get_repo("aloftus")
 # old
 
 # for repo in nd.get_repos():
@@ -113,13 +112,13 @@ for repo in nd.get_repos():
 info = OrderedDict(info)
 
 #%%
+# get totals
 total_uniques = sum([val["uniques"] for val in info.values()])  # 270
 total_views = sum([val["count"] for val in info.values()])  # 599
 
 # sort by total clones
 sorted_clones = sorted(info.items(), key=lambda item: item[1]["uniques"], reverse=True)
 {x[0]: x[1]["uniques"] for x in sorted_clones}
-
 # print(f"total uniques: {total_uniques}")
 # print(f"total views: {total_views}")
 # sort by unique clones
