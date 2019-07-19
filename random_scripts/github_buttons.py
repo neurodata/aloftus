@@ -81,7 +81,7 @@ g = Github("loftusa", PASSWORD)
 nd = g.get_organization("neurodata")
 me = nd.get_repo("aloftus")
 
-get_shield(me)
+len([repo for repo in nd.get_repos() if not repo.private])
 #%%
 # code
 # g = Github("loftusa", PASSWORD)
